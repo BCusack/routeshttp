@@ -10,6 +10,9 @@ import { AboutComponent } from './about/about.component';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import { routing } from './routing/routing.component';
 
+import { ModalModule } from 'angular2-modal';
+import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { routing } from './routing/routing.component';
     FormsModule,
     HttpModule,
     routing,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    ModalModule.forRoot(),
+    BootstrapModalModule
   ],
   bootstrap: [AppComponent]
 })
