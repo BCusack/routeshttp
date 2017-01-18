@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommentsComponent} from './comments/comments.component';
 import {AppServiceService} from './app-service.service';
 import {ToolbarComponent} from './toolbar/toolbar.component';

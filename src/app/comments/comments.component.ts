@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef , trigger, style, transition, animate, group } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
 import { Overlay } from 'angular2-modal';
 import { Modal } from 'angular2-modal/plugins/bootstrap';
@@ -8,7 +8,25 @@ import { Modal } from 'angular2-modal/plugins/bootstrap';
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css'],
-  providers: [AppServiceService]
+  providers: [AppServiceService],
+  animations: [
+  trigger('itemAnim', [
+    transition(':enter', [
+      style({transform: 'translateX(-100%)'}),
+      animate(350)
+    ]),
+    transition(':leave', [
+      group([
+        animate('0.2s ease', style({
+          transform: 'translate(150px,25px)'
+        })),
+        animate('0.5s 0.2s ease', style({
+          opacity: 0
+        }))
+      ])
+    ])
+  ])
+]
 })
 
 export class CommentsComponent {

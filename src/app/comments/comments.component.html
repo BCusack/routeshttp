@@ -1,8 +1,8 @@
 <md-card-content>
     <div class="container" fxLayout="row" >
         <div *ngFor="let post of posts"  [class.selected]="post === selectedPost"
-        (click)="onSelect(post)">
-            <md-card class="item" >
+        (click)="onSelect(post)" >
+            <md-card class="item"[@itemAnim] >
                 <md-card-title>{{post.title}}</md-card-title>
                 <p>{{post.body}}</p>
             </md-card>
